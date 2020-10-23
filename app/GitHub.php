@@ -51,7 +51,10 @@ class GitHub
         }
 
         $refs = explode('/', $this->payload->ref);
-        return end($refs);
+        $refs = end($refs);
+        $refs = preg_replace('/^I_/', '', $refs);
+
+        return $refs;
     }
 
     public function getWorkflow()
