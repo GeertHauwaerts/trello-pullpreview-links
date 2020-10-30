@@ -52,7 +52,7 @@ class GitHub
 
         $refs = explode('/', $this->payload->ref);
         $refs = end($refs);
-        $refs = preg_replace('/^I_/', '', $refs);
+        $refs = preg_replace('/^[IH]_/', '', $refs);
 
         return $refs;
     }
